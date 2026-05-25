@@ -11,7 +11,6 @@ for d in 01-vpc/ 02-sg/ 03-bastion/ 04-mysql/ 05-mongodb/ 06-redis/ 07-rabbitmq/
 done
 ```
 
-
 ```
 for i in 01-vpc/ 02-sg/ 03-bastion/ 04-mysql/ 05-mongodb/ 06-redis/ 07-rabbitmq/ 08-catalogue/ 09-cart/ 10-user/ 11-shipping/ 12-payment/ 13-web/ 14-dispatch/ ; do cd $i; terraform init ; cd .. ; done 
 ```

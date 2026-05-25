@@ -4,7 +4,8 @@ resource "aws_instance" "rabbitmq_instance" {
     instance_type = "t3.micro"
     vpc_security_group_ids = [data.aws_ssm_parameter.rabbitmq_sg_id.value]
     subnet_id = local.private_subnet_id
-    user_data = file("rabbitmq.sh")
+    #user_data = file("rabbitmq.sh")
+    user_data = file("${path.module}/rabbitmq.sh")
     root_block_device {
         volume_type           = "gp3"
         volume_size           = 50

@@ -4,7 +4,8 @@ resource "aws_instance" "mongodb_instance" {
     instance_type = "t3.micro"
     vpc_security_group_ids = [data.aws_ssm_parameter.mongodb_sg_id.value]
     subnet_id = local.private_subnet_id
-    user_data = file("mongodb.sh")
+    #user_data = file("mongodb.sh")
+    user_data = file("${path.module}/mongodb.sh")
     root_block_device {
         volume_type           = "gp3"
         volume_size           = 50
