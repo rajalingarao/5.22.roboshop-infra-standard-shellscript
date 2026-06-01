@@ -1,12 +1,9 @@
 variable "project_name" {
   default = "roboshop"
 }
-
 variable "environment" {
   default = "dev"
 }
-
-
 variable "common_tags" {
   default = {
     Project = "roboshop"
@@ -15,7 +12,6 @@ variable "common_tags" {
     Terraform = "true"
   }
 }
-
 variable "zone_id" {
   default = "Z012785114HGZTDQ8KSQH"
 }

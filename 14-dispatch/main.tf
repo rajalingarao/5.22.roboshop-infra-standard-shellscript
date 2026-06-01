@@ -3,7 +3,6 @@ resource "aws_instance" "dispatch_instance" {
     instance_type = "t3.micro"
     vpc_security_group_ids = [data.aws_ssm_parameter.dispatch_sg_id.value]
     subnet_id = local.public_subnet_id
-    #user_data = file("dispatch.sh")
     user_data = file("${path.module}/dispatch.sh")
     root_block_device {
         volume_type           = "gp3"
@@ -16,6 +15,7 @@ resource "aws_instance" "dispatch_instance" {
       },
       var.common_tags
     )
+
 }
 resource "aws_route53_record" "dispatch_instance_r53" {
     zone_id = var.zone_id
@@ -23,7 +23,7 @@ resource "aws_route53_record" "dispatch_instance_r53" {
     type    = "A"
     ttl     = 1
     records = [aws_instance.dispatch_instance.public_ip]
-    allow_overwrite = true
+    allow_overwrite = true 
 }
 
 

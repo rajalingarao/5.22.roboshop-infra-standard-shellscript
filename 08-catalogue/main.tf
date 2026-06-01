@@ -3,7 +3,6 @@ resource "aws_instance" "catalogue_instance" {
     instance_type = "t3.micro"
     vpc_security_group_ids = [data.aws_ssm_parameter.catalogue_sg_id.value]
     subnet_id = local.private_subnet_id
-    #user_data = file("catalogue.sh")
     user_data = file("${path.module}/catalogue.sh")
     root_block_device {
         volume_type           = "gp3"
@@ -22,7 +21,7 @@ resource "aws_route53_record" "catalogue_instance_r53" {
     name    = "catalogue.${var.domain_name}"
     type    = "A"
     ttl     = 1
-    records = [aws_instance.catalogue_instance.public_ip]
+    records = [aws_instance.catalogue_instance.private_ip]
     allow_overwrite = true
 }
 

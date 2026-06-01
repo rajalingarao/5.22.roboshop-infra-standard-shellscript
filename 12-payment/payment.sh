@@ -1,7 +1,7 @@
 #!/bin/bash
 cd /home/ec2-user
-git clone https://github.com/rajalingarao/3.7.roboshop-app-shellscript.git
-cd 3.7.roboshop-app-shellscript
+git clone https://github.com/rajalingarao/3.11.roboshop-app-infra-standard-shellscript.git
+cd 3.11.roboshop-app-infra-standard-shellscript
 sh payment.sh
 
 

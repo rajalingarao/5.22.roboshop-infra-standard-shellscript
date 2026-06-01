@@ -22,11 +22,9 @@ resource "aws_route53_record" "redis_instance_r53" {
     name    = "redis.${var.domain_name}"
     type    = "A"
     ttl     = 1
-    records = [aws_instance.redis_instance.public_ip]
+    records = [aws_instance.redis_instance.private_ip]
     allow_overwrite = true
 }
-
-
 
 
 

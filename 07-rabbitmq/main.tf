@@ -1,4 +1,3 @@
-
 resource "aws_instance" "rabbitmq_instance" {
     ami           = data.aws_ami.ami_info.id
     instance_type = "t3.micro"
@@ -23,7 +22,7 @@ resource "aws_route53_record" "rabbitmq_instance_r53" {
     name    = "rabbitmq.${var.domain_name}"
     type    = "A"
     ttl     = 1
-    records = [aws_instance.rabbitmq_instance.public_ip]
+    records = [aws_instance.rabbitmq_instance.private_ip]
     allow_overwrite = true
 }
 

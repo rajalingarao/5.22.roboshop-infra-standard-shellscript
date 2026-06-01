@@ -64,8 +64,8 @@ resource "aws_ssm_parameter" "web_sg_id" {
   value = module.web_sg.sg_id # module should have output declaration
 }
 
-resource "aws_ssm_parameter" "dispatch" {
-  name  = "/${var.project_name}/${var.environment}/dispatch"
+resource "aws_ssm_parameter" "dispatch_sg_id" {
+  name  = "/${var.project_name}/${var.environment}/dispatch_sg_id"
   type  = "String"
   value = module.dispatch_sg.sg_id # module should have output declaration
 }
