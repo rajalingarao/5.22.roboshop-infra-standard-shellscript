@@ -14,9 +14,7 @@
 
   - roboshop-web
   - roboshop-dispatch
-  
   - roboshop-bastion
-
 
   security_groups:
   - DB:
@@ -43,8 +41,8 @@
   - mongodb:
     - name: mongodb_bastion_22(ssh ec2-user@mongodb.lithesh.shop)with 22 port
       purpose: mongodb should accept traffic on 22 from bastion
-    - name: mongodb_ansible_27017
-      purpose: mongodb should accept traffic on 27017 from ansible
+    - name: mongodb_ansible_22
+      purpose: mongodb should accept traffic on 22 from ansible
     - name: mongodb_catalogue_27017
       purpose: mongodb should accept traffic on 27017 from catalogue
     - name: mongodb_user_27017
@@ -52,8 +50,8 @@
   - redis:
     - name: redis_bastion_22(ssh ec2-user@redis.lithesh.shop)with 22 port
       purpose: redis should accept traffic on 22 from bastion
-    - name: redis_ansible_6379
-      purpose: redis should accept traffic on 6379 from ansible
+    - name: redis_ansible_22
+      purpose: redis should accept traffic on 22 from ansible
     - name: redis_user_6379
       purpose: redis should accept traffic on 6379 from user
     - name: redis_cart_6379
@@ -61,22 +59,22 @@
   - mysql:
     - name: mysql_bastion_22(ssh ec2-user@mysql.lithesh.shop)with 22 port
       purpose: mysql should accept traffic on 22 from bastion
-    - name: mysql_ansible_3306
-      purpose: mysql should accept traffic on 3306 from ansible
+    - name: mysql_ansible_22
+      purpose: mysql should accept traffic on 22 from ansible
     - name: mysql_shipping_3306
       purpose: mysql should accept traffic on 3306 from shipping
   - rabbitmq:
     - name: rabbitmq_bastion_22(ssh ec2-user@rabbitmq.lithesh.shop)with 22 port
       purpose: rabbitmq should accept traffic on 22 from bastion
-    - name: rabbitmq_ansible_5672
-      purpose: rabbitmq should accept traffic on 5672 from ansible
+    - name: rabbitmq_ansible_22
+      purpose: rabbitmq should accept traffic on 22 from ansible
     - name: rabbitmq_payment_5672
       purpose: rabbitmq should accept traffic on 5672 from payment
   - catalogue:
     - name: catalogue_bastion_22(ssh ec2-user@catalogue.lithesh.shop)with 22 port
       purpose: catalogue should accept traffic on 22 from bastion
-    - name: catalogue_ansible_8080
-      purpose: catalogue should accept traffic on 8080 from ansible
+    - name: catalogue_ansible_22
+      purpose: catalogue should accept traffic on 22 from ansible
     - name: catalogue_web_8080
       purpose: catalogue should accept traffic on 8080 from web
     - name: catalogue_cart_8080
@@ -84,8 +82,8 @@
   - user:
     - name: user_bastion_22(ssh ec2-user@user.lithesh.shop)with 22 port
       purpose: user should accept traffic on 22 from bastion
-    - name: user_ansible_8080
-      purpose: user should accept traffic on 8080 from ansible
+    - name: user_ansible_22
+      purpose: user should accept traffic on 22 from ansible
     - name: user_web_8080
       purpose: user should accept traffic on 8080 from web
     - name: user_payment_8080
@@ -93,8 +91,8 @@
   - cart:
     - name: cart_bastion_22(ssh ec2-user@cart.lithesh.shop)with 22 port
       purpose: cart should accept traffic on 22 from bastion
-    - name: cart_ansible_8080
-      purpose: cart should accept traffic on 8080 from ansible
+    - name: cart_ansible_22
+      purpose: cart should accept traffic on 22 from ansible
     - name: cart_web_8080
       purpose: cart should accept traffic on 8080 from web
     - name: cart_shipping_8080
@@ -104,22 +102,22 @@
   - shipping:
     - name: shipping_bastion_22(ssh ec2-user@shipping.lithesh.shop)with 22 port
       purpose: shipping should accept traffic on 22 from bastion
-    - name: shipping_ansible_8080
-      purpose: shipping should accept traffic on 8080 from ansible
+    - name: shipping_ansible_22
+      purpose: shipping should accept traffic on 22 from ansible
     - name: shipping_web_8080
       purpose: shipping should accept traffic on 8080 from web
   - payment:
     - name: payment_bastion_22(ssh ec2-user@payment.lithesh.shop)with 22 port
       purpose: payment should accept traffic on 22 from bastion
-    - name: payment_ansible_8080
-      purpose: payment should accept traffic on 8080 from ansible
+    - name: payment_ansible_22
+      purpose: payment should accept traffic on 22 from ansible
     - name: payment_web_8080
       purpose: payment should accept traffic on 8080 from web
   - web:
     - name: web_bastion_22(ssh ec2-user@web.lithesh.shop)with 22 port
       purpose: web should accept traffic on 22 from bastion
-    - name: web_ansible_80
-      purpose: web should accept traffic on 80 from ansible
+    - name: web_ansible_22
+      purpose: web should accept traffic on 22 from ansible
     - name: web_internet_80
       purpose: web should accept traffic on 80 from internet
     - name: web_internet_22
@@ -127,8 +125,8 @@
   - dispatch:
     - name: dispatch_bastion_22(ssh ec2-user@dispatch.lithesh.shop)with 22 port
       purpose: dispatch should accept traffic on 22 from bastion
-    - name: dispatch_ansible_5672
-      purpose: dispatch should accept traffic on 5672 from ansible
+    - name: dispatch_ansible_22
+      purpose: dispatch should accept traffic on 22 from ansible
     - name: rabbitmq_dispatch_5672
       purpose: rabbitmq should accept traffic on 5672 from dispatch
     - name: dispatch_internet_80

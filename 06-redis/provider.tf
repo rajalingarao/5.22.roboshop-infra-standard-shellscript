@@ -13,8 +13,6 @@ backend "s3" {
   use_lockfile = true
   }
 }
-#provide authentication here
 provider "aws" {
-  # Configuration options
   region = "us-east-1"
 }
